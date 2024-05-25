@@ -27,18 +27,26 @@ Learning react: I went through these: https://react.dev/ and https://www.w3schoo
 Learning Flask: I already knew the basics.
 Learning MSAL and Azure hosting for specific scenarion - see below.
 
-### Steps for getting the basics deployed without MSAL
+### Steps for getting the Flask app running
+This was pretty straight-forward and is discussed in the other repo. I recommend starting out with a stub auth header that requires an interactive secrete to be passed in, so it can be deployed securely while the front-end is being developed.
+
+### Steps for getting front-end built and deployed
+Note: I wasted at least a week trying to get Azure deployment to work. I finally gave up and started over, putting
+the code in bit by bit to make sure deployment kept working at each step since I was unable to figure it out
+in the larger code base. Below are the incremental steps.
 
 Step 1: Create a react stub app in github and deploy it to Azure as a static web app per https://learn.microsoft.com/en-us/azure/static-web-apps/deploy-react?pivots=github. Note: this should be hosted on your default (company) Azure tenant.
-
-Note: Any time you make even the smallest change after this, stop and redeploy to make sure things are still working as there are so many very subtle things that can go wrong and Azure makes it super-hard to figure out where the problem lies. I had written a lot of code and tried to get the front end deployed to no avail, so I had to start slow and add incrementally to figure out what the deal was.
 
 Step 2: Create a new Azure B2C tenant, and then add front-end signin (don't worry about the web service part for now), per https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-single-page-app-react-sign-in. Make sure this is done in a new B2C tenant (this will be important later, and the documentation for some reason doesn't tell you to do this, only to make sure to "swtich to the right tenant"). This involves:
 * Some B2C tenant configuration
 * npm install @azure/msal-react @azure/msal-browser
 * Create msalConfig.js (to point to your B2C IDs) and MsalSignin.js (isolating the MSAL controls to one file)
 * Modify index.js to wrap the app in the MsalProvider
-* 
+* Modify App.js to call the signin button within the unautheticated template, and the signout button in the authenticated template
+* Test locally, save to git, verify the Azure deployment.
+
+Step 3: Added more code, including a call to the web service passing the auth token. I also added the app logo and name.
+
 
 
 
