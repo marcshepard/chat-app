@@ -133,10 +133,13 @@ function ScrollableChat({chatData, userName, botName}) {
     ));
   };
 
-  const chatText = formatChatData(chatData.slice(1)); // Skip the system message
+  var formatedChatData = formatChatData(chatData.slice(1)); // Skip the system message
+  if (chatData.length === 3) {
+    formatedChatData = [...formatedChatData, <p key={chatData.length}>Waiting for initial reply. Be patient as it is hosted on the Azure free tier which may take 30 seconds to start up for the initial response.</p>]
+  }
 
   return (
-    <ScrollableTextBox text={chatText} />
+    <ScrollableTextBox text={formatedChatData} />
   );
 }
 

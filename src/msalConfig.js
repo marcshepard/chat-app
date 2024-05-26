@@ -14,7 +14,8 @@ import { LogLevel } from "@azure/msal-browser";
 export const msalConfig = {
     auth: {
         clientId: "7cc6b016-0f22-4854-bd9d-5babbc7976b5",
-        authority: "https://login.microsoftonline.com/e0a687bb-3d18-469c-9e8b-c93af47275ef/v2.0",
+        authority: "https://chatapp123b2c.b2clogin.com/chatapp123b2c.onmicrosoft.com/B2C_1_chatapp_signup_signin/v2.0",
+        knownAuthorities: ["chatapp123b2c.b2clogin.com"],
         redirectUri: window.location.origin,
     },
     cache: {
@@ -55,7 +56,7 @@ export const msalConfig = {
  * https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-permissions-and-consent#openid-connect-scopes
  */
 export const loginRequest = {
-    scopes: ["User.Read"]
+    scopes: ["openid", "profile", "email"]
 };
 
 /*
