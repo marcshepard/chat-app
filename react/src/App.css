@@ -1,0 +1,50 @@
+:root {
+    --min-screen-width: 340px;
+    --pad-left: 5px;
+    --pad-right: 5px;
+    --main-bg-color: #FFFFFF;
+    --main-text-color: #090909;
+}
+
+.app {
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+    text-align: center;
+    padding-left: var(--pad-left);
+    padding-right: var(--pad-right);
+    min-width: var(--min-screen-width);
+  }
+  
+  .header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    height: 1.5em;
+    pointer-events: none;
+  }
+
+  .input-bar {
+    display: flex;
+    width: 100%;
+  }
+
+  .input-text {
+    flex: 1;
+    font-size:1.25em;
+  }
+
+  .scrollable-textbox {
+    height: 60vh;
+    overflow-y: scroll;
+    border: 1px solid black;
+    padding: 10px;
+    text-align: left;
+  }

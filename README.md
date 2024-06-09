@@ -1,5 +1,5 @@
 # Overview
-This is the front end of a simple chat app I built so I could understand how to do full stack development using React (front-end), Flask (web service), and Azure (hosting). It is powered by ChatGPT.
+This is a simple chat app I built to understand how to do full stack development using React (front-end), Flask (web service), Azure (hosting), and MSAL (auth). It is powered by ChatGPT.
 
 
 # Development
