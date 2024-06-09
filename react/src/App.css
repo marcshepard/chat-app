@@ -18,33 +18,55 @@
     min-width: var(--min-screen-width);
   }
   
-  .header {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+.header {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  .logo {
-    height: 1.5em;
-    pointer-events: none;
-  }
+.logo {
+  height: 1.5em;
+  pointer-events: none;
+}
 
-  .input-bar {
-    display: flex;
-    width: 100%;
-  }
+.input-bar {
+  display: flex;
+  width: 100%;
+}
 
-  .input-text {
-    flex: 1;
-    font-size:1.25em;
-  }
+.input-text {
+  flex: 1;
+  font-size:1.25em;
+}
 
-  .scrollable-textbox {
-    height: 60vh;
-    overflow-y: scroll;
-    border: 1px solid black;
-    padding: 10px;
-    text-align: left;
-  }
+.scrollable-textbox {
+  height: 60vh;
+  overflow-y: scroll;
+  border: 1px solid black;
+  padding: 10px;
+  text-align: left;
+}
+
+.help {
+  position: relative;
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+  width: 90vw;
+  padding: 10px;
+  margin: auto;
+  border: 1px solid var(--main-text-color);
+}
+
+.help-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: var(--main-text-color);
+  background-color: var(--main-bg-color);
+  font-size: 1.5em;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}

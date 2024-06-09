@@ -4,6 +4,7 @@
 
 import React from 'react';
 import { useState, useEffect, useRef } from 'react';
+import Modal from 'react-modal';
 import { SignInButton, SignOutButton, useAuthToken, AuthProviderAppWrapper, Authenticated, Unauthenticated } from "./MsalSignin";
 import './App.css';
 
@@ -15,6 +16,7 @@ const API_URL = process.env.REACT_APP_API_URL;
 const CHAT_URL = `${API_URL}/chat`;
 console.log("API_URL: ", API_URL);
 
+// The chatbots available in the app
 const CHATBOTS = [                                    // Chatbot configurations
   {
     "type": "Therapist",
@@ -251,6 +253,27 @@ function Chat({chatBot, session, sessionIsActive}) {
   );
 }
 
+function HelpModal({isOpen, onClose}) {
+  return (
+    <Modal
+      isOpen={isOpen}
+      onRequestClose={onClose}
+      contentLabel="Help Modal"
+      className = "help"
+    >
+      <button className="help-close" onClick={onClose}>x</button>
+      <div>
+        <h2 align="Center">About the chat app</h2>
+        <p>This chat app allows you to interact with different chatbots, powered by OpenAI.
+          A brief description of the selected chatbot is displayed at the top of the chat window.
+          You interact with it by typing messages in the text box at the bottom of the chat window and waiting for a response.
+          You can change chatbots from dropdown menu or click new to start a new chat session.</p>
+        <p>Chat app version: 0.5</p>
+      </div>
+    </Modal>
+  );
+}
+
 /**
  * App: The main component for the chat app react front-end
  * 
@@ -291,6 +314,7 @@ function ChatApp() {
           </div>
           <br />
           <Chat chatBot={chatBot} session={session} sessionIsActive={sessionIsActive}/>
+          <HelpModal isOpen={helpModalIsOpen} onClose={() => setHelpModalIsOpen(false)} />
         </Authenticated>
 
         <Unauthenticated>
