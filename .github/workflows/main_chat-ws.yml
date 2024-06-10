@@ -45,8 +45,8 @@ jobs:
         with:
           name: python-app
           path: |
-            release.zip
-            !venv/
+            flask-api/release.zip
+            !flask-api/venv/
 
   deploy:
     runs-on: ubuntu-latest
