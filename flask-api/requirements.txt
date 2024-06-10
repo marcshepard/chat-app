@@ -1,0 +1,8 @@
+flask
+pyjwt
+flask-cors
+ollama
+openai
+waitress
+requests
+cryptography
