@@ -23,7 +23,9 @@ Here's a quick overview of hosting and configuration
 
 ### Background learning
 Learning react: I went through these: https://react.dev/ and https://www.w3schools.com/react/.
+
 Learning Flask: I already knew the basics.
+
 Learning MSAL and Azure hosting for specific scenarion - see below.
 
 ### Steps for getting the Flask app running
