@@ -76,7 +76,7 @@ def chat():
         # Use OpenAI
         openai.api_key = OPENAI_API_KEY
         response = openai.chat.completions.create(
-            model="gpt-3.5-turbo",
+            model="gpt-4o",
             messages=messages,
             temperature=0.2,
         )
