@@ -23,11 +23,13 @@ Here's a quick overview of hosting and configuration
 
 ### Background learning
 Learning react: I went through these: https://react.dev/ and https://www.w3schools.com/react/.
+
 Learning Flask: I already knew the basics.
+
 Learning MSAL and Azure hosting for specific scenarion - see below.
 
 ### Steps for getting the Flask app running
-This was pretty straight-forward and is discussed in the other repo. I recommend starting out with a stub auth header that requires an interactive secrete to be passed in, so it can be deployed securely while the front-end is being developed.
+This was pretty straight-forward and is discussed in the other repo. I recommend starting out with a stub auth header that requires an interactive secret to be passed in, so it can be deployed securely while the front-end is being developed.
 
 ### Steps for getting front-end built and deployed
 This wound up being insanely complicated and I had to start over and add the code bit by bit to get it working because I found Azure to be non-debuggable (nothing in the application or deployment logs suggested why the app wasn't working). Here are some notes on the steps I did on the redo, checking that deployment kept working at each step.
